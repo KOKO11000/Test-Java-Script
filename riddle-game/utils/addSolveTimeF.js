@@ -1,3 +1,3 @@
-export default addSolveTime = (player, seconds)=>{
+export default function addSolveTime(player, seconds){
     player.timeSecond.push(seconds)
 } 

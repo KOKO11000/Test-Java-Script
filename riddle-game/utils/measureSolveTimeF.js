@@ -1,4 +1,4 @@
-export default measureSolveTime = (fn) => {
+export default function measureSolveTime (fn){
     let start = Date.now()
     fn()
     let timer =  Date.now() - start

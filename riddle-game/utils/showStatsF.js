@@ -1,4 +1,4 @@
-export default showStats = (player) =>{
+export default function showStats(player){
     let allTimeers = player.timeSeconds
     let sum = 0
     let average = 0
