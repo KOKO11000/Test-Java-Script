@@ -1,3 +1,6 @@
+
 export default function addSolveTime(player, seconds){
-    player.timeSecond.push(seconds)
+    player.timeSeconds.push(seconds)
+    console.log(player);
+    
 } 

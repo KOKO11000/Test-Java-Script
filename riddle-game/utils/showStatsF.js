@@ -4,11 +4,9 @@ export default function showStats(player){
     let average = 0
     for (let i = 0; i < allTimeers.length; i++) {
         sum += allTimeers[i];
-    }
-    average = sum / 2
-    console.log(`sum:${sum},avr:${average}`);
-    
-    return sum, average        
+    }   
+    average = sum / allTimeers.length
+    console.log(`sum:${sum} sec, avg:${average} sec`);
 }
 
 

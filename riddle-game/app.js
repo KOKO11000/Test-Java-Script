@@ -1,23 +1,25 @@
-import * as allGame from "./allFunction.js";
+import allGame from "./allFunction.js";
+import allRiddels from "./riddles/module.js"
 import input from "analiza-sync"
+import addSolveTime from "./utils/addSolveTimeF.js";
+import createPlayer from "./utils/player.js";
+import askRiddle from "./utils/askRiddleF.js";
+import measureSolveTime from "./utils/measureSolveTimeF.js";
+import showStats from "./utils/showStatsF.js";
 
 console.log("WELCOME TO THE GAME ☺");
+const playerName = input("what your name?: ")
+const player = createPlayer(playerName)
 
-const player = allGame.default.createPlayer;
-player(input("what your name?: "))
-const riddle = allGame.default.riddles
-    
-const startRiddle = () => {
-    
-    for (let i = 0; i < riddle.length; i++) {
-        const gameRiddle = riddle[i];
-        const quation = input(`
-            id:${gameRiddle.id},
-            name:${gameRiddle.name},
-            taskDescription:${gameRiddle.taskDescription}: `) 
-        console.log(quation);   
-    }
+
+
+for (let i = 0; i < allRiddels.length; i++) {
+    const timeSolved = measureSolveTime(() => askRiddle(allRiddels[i]))
+    addSolveTime(player,timeSolved)   
 }
-startRiddle()
+showStats(player)
 
-// const s = allGame.default.askRiddle(riddle)
+
+
+
+
